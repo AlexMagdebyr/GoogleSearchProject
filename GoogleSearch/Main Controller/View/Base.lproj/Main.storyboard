@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTF-6z-o5D">
+                                <rect key="frame" x="20" y="127" width="374" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Google Search">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleSearchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="84f-5T-vAb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Search Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JvG-i5-aDN">
+                                <rect key="frame" x="20" y="73" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="It1-6U-do6">
+                                <rect key="frame" x="0.0" y="171" width="414" height="691"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hhr-dR-dBe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0IX-0c-jSb"/>
+                                </connections>
+                            </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HZ6-an-ygA">
+                                <rect key="frame" x="20" y="54" width="374" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JvG-i5-aDN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ecs-EV-hG5"/>
+                            <constraint firstItem="DTF-6z-o5D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fjl-gr-34q"/>
+                            <constraint firstItem="HZ6-an-ygA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gqm-bV-wB7"/>
+                            <constraint firstItem="DTF-6z-o5D" firstAttribute="top" secondItem="JvG-i5-aDN" secondAttribute="bottom" constant="20" id="IY2-h4-hgp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="It1-6U-do6" secondAttribute="trailing" id="No1-Hu-kFN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JvG-i5-aDN" secondAttribute="trailing" constant="20" id="OQT-II-Ge3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HZ6-an-ygA" secondAttribute="trailing" constant="20" id="P1H-0F-6sJ"/>
+                            <constraint firstItem="HZ6-an-ygA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="PoA-bQ-nOX"/>
+                            <constraint firstItem="It1-6U-do6" firstAttribute="top" secondItem="DTF-6z-o5D" secondAttribute="bottom" constant="11" id="ZBE-qP-dxg"/>
+                            <constraint firstItem="It1-6U-do6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ndB-hb-GVz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="It1-6U-do6" secondAttribute="bottom" id="oAB-1N-7HX"/>
+                            <constraint firstItem="JvG-i5-aDN" firstAttribute="top" secondItem="HZ6-an-ygA" secondAttribute="bottom" constant="15" id="uAJ-A5-gSO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DTF-6z-o5D" secondAttribute="trailing" constant="20" id="z0r-md-O39"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="googleSearchButton" destination="DTF-6z-o5D" id="GRr-cL-Z9E"/>
+                        <outlet property="inputTextField" destination="JvG-i5-aDN" id="jBX-GL-cm2"/>
+                        <outlet property="mainTableView" destination="It1-6U-do6" id="4hK-H5-loO"/>
+                        <outlet property="progressView" destination="HZ6-an-ygA" id="s8h-bD-uku"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
