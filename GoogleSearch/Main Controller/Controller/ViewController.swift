@@ -117,6 +117,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let modelsArray = dataSource.compactMap({TableViewCellModel(link: $0.link, title: $0.title, src: $0.pagemap?.cse_thumbnail?.first?.src)})
         cell.setupWithModel(model: modelsArray[indexPath.row])
         return cell
-    }
+    } 
 }
 
